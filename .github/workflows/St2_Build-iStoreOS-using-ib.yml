@@ -287,9 +287,7 @@ jobs:
           echo "file=$ROOTFS_FILE" >> $GITHUB_OUTPUT
 
       - name: 🧱 打包iStoreOS固件
-        uses: ophub/amlogic-s9xxx-openwrt@main
-        env:
-          PATH=$(pwd)/fake_cp:${PATH}
+        uses: ophub/amlogic-s9xxx-openwrt@stable
         with:
           openwrt_path: ${{ steps.find_rootfs.outputs.file }}
           openwrt_board: ${{ inputs.openwrt_board }}
